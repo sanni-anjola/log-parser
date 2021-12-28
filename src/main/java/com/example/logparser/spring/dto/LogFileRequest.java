@@ -15,6 +15,7 @@ import java.time.LocalDateTime;
 public class LogFileRequest {
     @CsvBindByPosition(position = 0)
     @CsvDate("yyyy-MM-dd HH:mm:ss.SSS")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss.SSS")
     private LocalDateTime date;
     @CsvBindByPosition(position = 1)
     private String ip;
