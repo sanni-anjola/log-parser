@@ -8,4 +8,6 @@ import java.util.List;
 public interface LogService {
     Log save(LogFileRequest logFileRequest);
     List<Log> saveAll(List<LogFileRequest> logFileRequests);
+
+    Log getOne(Long id);
 }

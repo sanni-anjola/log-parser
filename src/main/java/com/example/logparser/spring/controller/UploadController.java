@@ -1,6 +1,7 @@
 package com.example.logparser.spring.controller;
 
 import com.example.logparser.spring.dto.LogFileRequest;
+import com.example.logparser.spring.model.Log;
 import com.example.logparser.spring.service.LogService;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -31,6 +32,10 @@ public class UploadController {
     private final Job job;
 
 
+    @GetMapping("/{id}")
+    public Log getOne(@PathVariable Long id){
+        return logService.getOne(id);
+    }
     @GetMapping("/load")
     public ResponseEntity<?> load() {
         try {

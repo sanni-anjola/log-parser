@@ -32,4 +32,9 @@ public class LogServiceImpl implements LogService{
                                     .build())
                             .collect(Collectors.toList()));
     }
+
+    @Override
+    public Log getOne(Long id) {
+        return logRepository.findById(id).orElse(null);
+    }
 }
