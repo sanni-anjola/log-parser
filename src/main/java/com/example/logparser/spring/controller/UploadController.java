@@ -39,7 +39,6 @@ public class UploadController {
     @GetMapping("/load")
     public ResponseEntity<?> load() {
         try {
-
             Map<String, JobParameter> maps = new HashMap<>();
             maps.put("time", new JobParameter(System.currentTimeMillis()));
             JobParameters parameters = new JobParameters(maps);
@@ -68,11 +67,6 @@ public class UploadController {
         }
         return saveFileToDB(file);
     }
-
-
-
-
-
 
     private ResponseEntity<String> saveFileToDB(MultipartFile file) {
         try (Reader reader = new BufferedReader(new InputStreamReader(file.getInputStream()))){
